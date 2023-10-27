@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.dao.SQLProcess">
+
+    <select id="select" resultType="java.util.HashMap">
+        <![CDATA[${sql}]]>
+    </select>
+
+    <insert id="insert" parameterType="java.lang.String">
+        <![CDATA[${sql}]]>
+    </insert>
+
+    <resultMap id="dc" type="com.example.demo.model.DC">
+        <result property="dcId" column = "dc_id"/>
+        <result property="table" column = "dc_table"/>
+        <result property="name" column = "dc_name"/>
+    </resultMap>
+
+    <select id="selectDCByDCTable" resultMap="dc">
+        select * from meta.dc where dc_table = #{table}
+    </select>
+
+    <resultMap id="dca" type="com.example.demo.model.DCA">
+        <result property="dcaId" column = "dca_id"/>
+        <result property="dcId" column = "dc_id"/>
+        <result property="field" column = "dca_field_name"/>
+        <result property="name" column = "dca_name"/>
+    </resultMap>
+
+    <select id="selectDCAByDCId" resultMap="dca">
+        select * from meta.dca where dc_id = #{dcId}
+    </select>
+
+    <resultMap id="mapping" type="com.example.demo.model.Mapping">
+        <result property="vinDCAId" column = "vin_dca_id"/>
+        <result property="pinDCAId" column = "pin_dca_id"/>
+    </resultMap>
+
+    <select id="selectMapping" resultMap="mapping">
+        select * from meta.vin_pin_map
+    </select>
+
+    <select id="findMaxPin" resultType="java.lang.Integer">
+        select max(pin) from product.dc
+    </select>
+
+</mapper>
