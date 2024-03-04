@@ -2,12 +2,9 @@ package com.example.demo.service;
 
 import com.example.demo.entity.Attribute;
 import com.example.demo.entity.Concept;
-import jakarta.annotation.PostConstruct;
-import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 @Service
-@Getter
 public class ProductWrite {
 
     private String insertStr;
@@ -32,4 +29,7 @@ public class ProductWrite {
         insertStr = stringBuilder.toString();
     }
 
+    public String getInsertStr() {
+        return insertStr;
+    }
 }

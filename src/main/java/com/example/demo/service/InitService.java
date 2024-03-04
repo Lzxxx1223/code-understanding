@@ -18,7 +18,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-@Getter
 public class InitService {
 
     private final Map<EnumType, Concept> conceptSchema = new HashMap<>();
@@ -51,5 +50,13 @@ public class InitService {
         if (enumType == EnumType.PRODUCT) {
             productWrite.insertSt(concept);
         }
+    }
+
+    public List<Mapping> getMappings() {
+        return mappings;
+    }
+
+    public Map<EnumType, Concept> getConceptSchema() {
+        return conceptSchema;
     }
 }

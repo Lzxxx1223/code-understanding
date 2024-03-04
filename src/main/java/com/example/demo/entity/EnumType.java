@@ -1,8 +1,5 @@
 package com.example.demo.entity;
 
-import lombok.Getter;
-
-@Getter
 public enum EnumType {
 
     PRODUCT("product.dc", "pin"),
@@ -14,5 +11,13 @@ public enum EnumType {
     EnumType(String tableName, String fieldName) {
         this.tableName = tableName;
         this.fieldName = fieldName;
+    }
+
+    public String getTableName() {
+        return tableName;
+    }
+
+    public String getFieldName() {
+        return fieldName;
     }
 }
