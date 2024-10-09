@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Service
 public class Process {
 
-    private static final Integer vin = 1;
+    private static Integer vin = 1;
 
     @Autowired
     private SQLProcess sqlProcess;
