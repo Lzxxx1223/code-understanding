@@ -60,4 +60,8 @@ public class InitService {
     public Map<EnumType, Concept> getConceptSchema() {
         return conceptSchema;
     }
+
+    public void setMappings(List<Mapping> mappings, int size) {
+        this.mappings = mappings;
+    }
 }
