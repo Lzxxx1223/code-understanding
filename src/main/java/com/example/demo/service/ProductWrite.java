@@ -33,7 +33,4 @@ public class ProductWrite {
         return insertStr;
     }
 
-    /*public void testInsert(String insertStr) {
-        this.insertStr = insertStr;
-    }*/
 }
