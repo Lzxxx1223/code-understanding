@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
+    private static final Integer vin = 1;
 public class Process {
 
     private static Integer vin = 1;
