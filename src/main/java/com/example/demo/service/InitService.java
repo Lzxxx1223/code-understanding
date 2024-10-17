@@ -62,6 +62,7 @@ public class InitService {
     }
 
     public void setMappings(List<Mapping> mappings, int size) {
+    public void setMappings(List<Mapping> mappings) {
         this.mappings = mappings;
     }
 }
